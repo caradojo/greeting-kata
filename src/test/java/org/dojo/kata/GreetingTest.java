@@ -59,4 +59,17 @@ public class GreetingTest {
 		// Then
 		Assertions.assertThat(greetingName).isEqualTo("Hello, Jill and Jane.");
 	}
+
+	@Test
+	public void greeting_with_an_array_of_three_names_returns_Hello_with_names() {
+		// Given
+		List<String> names = Arrays.asList("Amy", "Brian", "Charlotte");
+		Greeting gretting = new Greeting();
+		
+		// When
+		String greetingName = gretting.greet(names);
+		
+		// Then
+		Assertions.assertThat(greetingName).isEqualTo("Hello, Amy, Brian, and Charlotte.");
+	}
 }
