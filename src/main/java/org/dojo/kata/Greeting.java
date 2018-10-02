@@ -1,5 +1,7 @@
 package org.dojo.kata;
 
+import java.util.List;
+
 public class Greeting {
 
 	private static boolean isInUppercase(String name) {
@@ -12,6 +14,11 @@ public class Greeting {
 		if(isInUppercase(name))
 			return "HELLO " + name + "!";
 		return "Hello, " + name + ".";
+	}
+
+	public String greet(List<String> names) {
+		String name = names.get(0) + " and "+ names.get(1);
+		return greet(name);
 	}
 
 }

@@ -1,5 +1,8 @@
 package org.dojo.kata;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.fest.assertions.api.Assertions;
 import org.junit.Test;
 
@@ -42,5 +45,18 @@ public class GreetingTest {
 		
 		// Then
 		Assertions.assertThat(greetingName).isEqualTo("HELLO JERRY!");
+	}
+	
+	@Test
+	public void greeting_with_an_array_of_two_names_returns_Hello_with_names() {
+		// Given
+		List<String> names = Arrays.asList("Jill", "Jane");
+		Greeting gretting = new Greeting();
+		
+		// When
+		String greetingName = gretting.greet(names);
+		
+		// Then
+		Assertions.assertThat(greetingName).isEqualTo("Hello, Jill and Jane.");
 	}
 }
