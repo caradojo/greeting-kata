@@ -30,4 +30,17 @@ public class GreetingTest {
 		// Then
 		Assertions.assertThat(greetingName).isEqualTo("Hello, my friend.");
 	}
+
+	@Test
+	public void greeting_with_uppercase_name_returns_HELLO_NAME() {
+		// Given
+		String name = "JERRY";
+		Greeting gretting = new Greeting();
+		
+		// When
+		String greetingName = gretting.greet(name);
+		
+		// Then
+		Assertions.assertThat(greetingName).isEqualTo("HELLO JERRY!");
+	}
 }
