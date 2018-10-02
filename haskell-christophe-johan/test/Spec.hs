@@ -12,7 +12,9 @@ greet (Just name) = if L.all isUpper name
 
 greet2 :: Either [String] (Maybe String) -> String
 greet2 (Right m) = greet m
-greet2 (Left (n:m:ns)) = "Hello, " ++ allButLast ++ " and " ++ lastName where
+greet2 (Left names@(n:m:ns)) = "Hello, " ++ allButLast1 ++ " and " ++ lastName1 where
+  [lastName1 : allButLast1] :: [String ]
+  [lastName1 : allButLast1] = reverse names
   allButLast = "Jill"
   lastName = "Jane"
 greet2 (Left (n:ns)) = "Hello, " ++ n
