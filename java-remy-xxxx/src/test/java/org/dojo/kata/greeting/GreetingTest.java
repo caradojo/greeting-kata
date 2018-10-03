@@ -1,4 +1,4 @@
-package org.dojo.kata;
+package org.dojo.kata.greeting;
 
 import java.util.Arrays;
 import java.util.List;
